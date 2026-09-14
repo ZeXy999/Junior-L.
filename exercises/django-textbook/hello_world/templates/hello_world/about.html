@@ -1,0 +1,15 @@
+{% extends 'hello_world/base.html' %}
+
+{% block title %}About Me{% endblock %}
+
+{% block content %}
+    <h1 class="page-title">About <span class="highlight">{{ name }}</span></h1>
+    <p>{{ bio }}</p>
+
+    <h3>Top 5 Favorite Movies</h3>
+    <ul class="skills-list">
+        {% for movie in favorites %}
+            <li>{{ movie }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

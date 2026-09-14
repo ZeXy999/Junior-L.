@@ -1,0 +1,22 @@
+{% extends 'hello_world/base.html' %}
+
+{% block title %}Hello, {{ name }}!{% endblock %}
+
+{% block content %}
+    <h1 class="page-title">Hello, <span class="highlight">{{ name|title }}</span>!</h1>
+    <p class="greeting">{{ greeting }}</p>
+
+    {% if is_authenticated %}
+        <p>You are logged in. Welcome back!</p>
+    {% else %}
+        <p>You are not logged in. Please sign in for more features.</p>
+    {% endif %}
+
+    <ul class="skills-list">
+        {% for skill in skills %}
+            <li>{{ skill }}</li>
+        {% empty %}
+            <li>No skills listed yet.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

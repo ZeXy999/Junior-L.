@@ -1,0 +1,25 @@
+{% extends 'hello_world/base.html' %}
+
+{% block title %}Template Tags Practice{% endblock %}
+
+{% block content %}
+    <h1 class="page-title">Template Tags Practice</h1>
+
+    <table class="numbers-table">
+        <tr><th>Number</th><th>Even or Odd</th></tr>
+        {% for number in numbers %}
+        <tr>
+            <td>{{ number }}</td>
+            <td>
+                {% if number|divisibleby:2 %}
+                    Even
+                {% else %}
+                    Odd
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <p><strong>Sum of all numbers:</strong> {{ total }}</p>
+{% endblock %}
